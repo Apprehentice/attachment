@@ -63,3 +63,7 @@ If, for some reason, your main environment is not love, you can pass your enviro
 local environment = require("environment")
 local bootycall = require("bootycall")(environment)
 ```
+This can be useful if, for example, you don't want BootyCall to consume LÖVE's callbacks.
+```Lua
+local bootycall = require("bootycall")({})
+```
