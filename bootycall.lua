@@ -64,7 +64,7 @@ function bootycall:new(env)
 end
 
 function bootycall:hook(ev,func)
-  assert(ev, "bad argument #1 to 'hook' (got nil)")
+  assert(ev ~= nil, "bad argument #1 to 'hook' (got nil)")
   assert(type(func) == "function", "bad argument #2 to 'hook' (function expected, got " .. type(func) .. ")")
   if not self.hooks[ev] then self.hooks[ev] = {} end
   table.insert(self.hooks[ev], func)
@@ -72,8 +72,8 @@ function bootycall:hook(ev,func)
 end
 
 function bootycall:unhook(ev, func)
-  assert(ev, "bad argument #1 to 'unhook' (got nil)")
-  assert(id, "bad argument #2 to 'unhook' (got nil)")
+  assert(ev ~= nil, "bad argument #1 to 'unhook' (got nil)")
+  assert(id ~= nil, "bad argument #2 to 'unhook' (got nil)")
   if self.hooks[ev] then
     for i, f in ipairs(self.hooks[ev]) do
       if f == func then
