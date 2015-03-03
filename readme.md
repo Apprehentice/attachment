@@ -58,7 +58,7 @@ bootycall:call("foo") -- Outputs "bar"
 ```
 
 ### Other Environments ###
-If, for some reason, your main environment is not love, you can also pass your environment to BootyCall as the first argument when creating your BootyCall event handler.
+If, for some reason, your main environment is not love, you can pass your environment to BootyCall as the first argument when creating your BootyCall event handler.
 ```Lua
 local environment = require("environment")
 local bootycall = require("bootycall")(environment)
