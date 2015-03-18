@@ -46,7 +46,7 @@ end
 
 function attachment:attachObject(obj)
   for i, callback in ipairs(callbacks) do
-    if obj[callback] then a:attach(callback, obj[callback]) end
+    if obj[callback] then self:attach(callback, obj[callback]) end
   end
 end
 
