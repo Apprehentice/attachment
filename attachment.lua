@@ -44,9 +44,7 @@ function attachment:detach(ev, func)
   end
 end
 
-function attachment:attachObject(obj, prefix)
-  assert(type(prefix) == "string", "bad argument #2 to attachObject (string expected, got " .. type(prefix) .. ")")
-
+function attachment:attachObject(obj)
   for i, callback in ipairs(callbacks) do
     if obj[callback] then a:attach(callback, obj[callback]) end
   end
