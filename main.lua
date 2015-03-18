@@ -5,6 +5,7 @@
 --   the value of the counter variable. The counter variable should
 --   rise until it reaches 100 and stop.
 --   In addition, Cyan text should appear on screen reading "Hello, World!"
+--   and the text "bar    20" should be output to the console.
 
 local attachment = require("attachment")()
 
@@ -36,3 +37,8 @@ local obj = {
 }
 
 attachment:attachObject(obj)
+
+attachment:attach("foo", function(num)
+  print("bar", num)
+end)
+attachment:call("foo", 20)
