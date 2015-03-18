@@ -26,7 +26,7 @@ end
 function attachment:attach(ev,func)
   assert(ev ~= nil, "bad argument #1 to 'attach' (got nil)")
   assert(type(func) == "function", "bad argument #2 to 'attach' (function expected, got " .. type(func) .. ")")
-  if not self.attachments[ev] then self.hooks[ev] = {} end
+  if not self.attachments[ev] then self.attachments[ev] = {} end
   table.insert(self.attachments[ev], func)
   return func
 end
