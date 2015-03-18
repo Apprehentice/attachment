@@ -31,9 +31,9 @@ function attachment:attach(ev,func)
   return func
 end
 
-function attachment:unattach(ev, func)
+function attachment:detach(ev, func)
   assert(ev ~= nil, "bad argument #1 to 'unattach' (got nil)")
---assert(id ~= nil, "bad argument #2 to 'unattach' (got nil)") -- FIXME: there is no id here?!
+	assert(type(func) == "function", "bad argument #2 to 'detach' (function expected, got " .. type(func) .. ")")
   if self.attachs[ev] then
     for i, f in ipairs(self.attachs[ev]) do
       if f == func then

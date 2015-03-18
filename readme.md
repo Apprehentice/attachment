@@ -30,7 +30,7 @@ attachment:attach("draw", function()
   love.graphics.print("Hello, World!", 0, 0)
 end)
 ```
-The *attach* function returns the function that was added so that you may unattach it later, if necessary.
+The *attach* function returns the function that was added so that you may detach it later, if necessary.
 
 With Attachment, you can also add all of an object or module's callbacks to a Attachment event handler by calling attachment:attachObject
 ```Lua
@@ -42,9 +42,9 @@ attachment:attachObject(othermodule)
 This will have Attachment run through the object and register anything that looks like a LÖVE callback.
 
 ### Unattaching ###
-To unattach a function from an event, do
+To detach a function from an event, do
 ```Lua
-attachment:unattach("event name", function)
+attachment:detach("event name", function)
 ```
 This will run through the event called "event name" and remove the given function if it is found.
 
