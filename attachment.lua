@@ -9,7 +9,8 @@ local callbacks = {
 	"joystickreleased", "joystickremoved",
 }
 
-function attachment:new(env)
+function attachment.new(env)
+	assert(env ~= attachment, "Cannot call 'new' with colon operator")
   env = env or require("love")
 
   local a = setmetatable({}, { __index = attachment })
